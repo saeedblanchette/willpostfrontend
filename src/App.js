@@ -22,7 +22,7 @@ import Vote from './pages/Vote';
 import Post from './pages/Post';
 function App() {
   return (
-    <Router>
+    <Router  basename="/willpostfrontend">
       <ChakraProvider theme={theme}>
         <Switch>
           {/* <Route exact path="/" component={L}/> */}

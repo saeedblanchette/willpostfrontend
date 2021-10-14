@@ -9,18 +9,18 @@ import {
 } from "@chakra-ui/react";
 const titledParagraphlist = [
   {
-    title: "Secure way",
+    title: "Secure ",
     paragraph:
       "Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident. Exercitation velit ea",
   },
   {
-    title: "Sample way",
+    title: "Sample ",
     paragraph:
       "Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident. Exercitation velit ea",
   },
 
   {
-    title: "Video and audio ",
+    title: " Support for Video and audio ",
     paragraph:
       "Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident. Exercitation velit ea",
   },
@@ -77,7 +77,7 @@ export default function Features() {
             bgPosition="bottom"
             bgRepeat="no-repeat"
           >
-            <Image src="/images/featuresBg.png" alt="Segun Adebayo" />
+            <Image src="/willpostfrontend/images/featuresBg.png" alt="Segun Adebayo" />
           </Box>
         </Flex>
       </Box>
