@@ -9,7 +9,7 @@ export default function Main() {
     <Box
       h="100vh"
       px={['5', '10', '28']}
-      bgImage="url('/willpostfrontend/images/background.png')"
+      bgImage="url('/images/background.png')"
       backgroundSize="cover"
       bgPosition="bottom left"
       bgRepeat="no-repeat"
@@ -44,7 +44,7 @@ export default function Main() {
         </Box>
         <Box
           h="100%"
-          bgImage="url('/willpostfrontend/images/backimage.svg')"
+          bgImage="url('/images/backimage.svg')"
           backgroundSize="contain"
           bgPosition="bottom"
           bgRepeat="no-repeat"

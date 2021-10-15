@@ -1,7 +1,7 @@
 {
   "name": "willpost-frontend-app",
   "version": "0.1.0",
-  "homepage": "https://saeedblanchette.github.io/willpostfrontend",
+
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.0.0",

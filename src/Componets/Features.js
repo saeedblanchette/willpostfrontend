@@ -77,7 +77,7 @@ export default function Features() {
             bgPosition="bottom"
             bgRepeat="no-repeat"
           >
-            <Image src="/willpostfrontend/images/featuresBg.png" alt="Segun Adebayo" />
+            <Image src="/images/featuresBg.png" alt="Segun Adebayo" />
           </Box>
         </Flex>
       </Box>
