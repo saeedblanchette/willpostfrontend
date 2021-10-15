@@ -69,7 +69,9 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
 
     let com;
     let url = null;
-    console.log(' typeName ===> ', typeName);
+    console.log(' mainComponent ===> ', mainComponent);
+    console.log(' typeName  type ===> ', typeName.type);
+    console.log(' typeName ===> ', typeName,);
     switch (typeName) {
       case 'ContactSelector':
         if (selectedContacts.length === 0) setDisabledNext(true);
