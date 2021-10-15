@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react';
 import React, {  useContext } from 'react';
+import PropTypes from 'prop-types';
 import { BsFillCameraVideoFill, BsBoxArrowInRight } from 'react-icons/bs';
 import { AiFillAudio } from 'react-icons/ai';
 import { ComponentsQueue } from './RecorderCreator';
@@ -117,6 +118,13 @@ const RecorderAssistant = ( ) => {
      
     </>
   );
+};
+RecorderAssistant.propTypes = {
+
+  name:PropTypes.string,
+};
+RecorderAssistant.defaultProps = {
+  name:'RecorderAssistant'
 };
 
 export default RecorderAssistant;

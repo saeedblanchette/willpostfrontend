@@ -1,7 +1,7 @@
 import { Flex, Icon, Tooltip, Box, Text } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import AudioVisualizer from './AudioVisualizer';
-
+import PropTypes from 'prop-types';
 import { FaStop } from 'react-icons/fa';
 import { RiRecordCircleFill } from 'react-icons/ri';
 import AudioPlayer from './AudioPlayer';
@@ -172,6 +172,13 @@ const AudioRecorder = ({ extAudioSrcUrl = null, onChange }) => {
       </Box>
     </Box>
   );
+};
+AudioRecorder.propTypes = {
+
+  name:PropTypes.string,
+};
+AudioRecorder.defaultProps = {
+  name:'AudioRecorder'
 };
 
 export default AudioRecorder;

@@ -15,8 +15,7 @@ import { FaPause, FaPlay } from 'react-icons/fa';
 import { RecordButton } from '../pages/Home/RecorderCreator/buttons';
 import { useTimer } from '../pages/Home/RecorderCreator/timer';
 import { RiVideoAddLine } from 'react-icons/ri';
-
-// import "node_modules/video-react/dist/video-react.css";
+import PropTypes from 'prop-types';
 import { Player, ControlBar } from 'video-react';
 import 'video-react/dist/video-react.css';
 const Controls = ({ isPaused, timeString, onResume, onPause, onStop }) => {
@@ -284,6 +283,13 @@ const VideoRecorder = ({ extVideoSrcUrl, onChange }) => {
       )}
     </Box>
   );
+};
+VideoRecorder.propTypes = {
+
+  name:PropTypes.string,
+};
+VideoRecorder.defaultProps = {
+  name:'VideoRecorder'
 };
 
 export default VideoRecorder;

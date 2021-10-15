@@ -35,8 +35,7 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
     if (hasNext) next();
   };
   const onChangeHandeler = value => {
-    const typeName = mainComponent.type.name;
-    console.log(' typeName ===> ', typeName);
+    const typeName = mainComponent.props.name;
     switch (typeName) {
       case 'ContactSelector':
         const ids = value.map(contacts => contacts.value);
@@ -65,13 +64,9 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
   };
 
   useEffect(() => {
-    const typeName = mainComponent.type.name;
-
+    const typeName = mainComponent.props.name;
     let com;
     let url = null;
-    console.log(' mainComponent ===> ', mainComponent);
-    console.log(' typeName  type ===> ', typeName.type);
-    console.log(' typeName ===> ', typeName,);
     switch (typeName) {
       case 'ContactSelector':
         if (selectedContacts.length === 0) setDisabledNext(true);

@@ -5,6 +5,7 @@ import {
   AlertDescription,
 } from '@chakra-ui/alert';
 import { Box, Heading } from '@chakra-ui/layout';
+import PropTypes from 'prop-types';
 import { Progress } from '@chakra-ui/progress';
 import React, { useContext, useEffect, useState } from 'react';
 import { PostService } from '../../../services';
@@ -122,6 +123,13 @@ const SaveRecord = ({ handleProvousEnable, onChange }) => {
       )}
     </Box>
   );
+};
+SaveRecord.propTypes = {
+
+  name:PropTypes.string,
+};
+SaveRecord.defaultProps = {
+  name:'SaveRecord'
 };
 
 export default SaveRecord;

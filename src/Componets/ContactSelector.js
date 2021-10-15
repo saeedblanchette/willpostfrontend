@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react';
-import React, { ReactDOM,useEffect, useState } from 'react';
+import React, {useEffect, useRef, useState } from 'react';
 import { ContactService } from '../services';
 import AsyncSelect from 'react-select/async';
 import PropTypes from 'prop-types';
@@ -16,6 +16,7 @@ const ContactSelector = ({
   const [contactList, setContactList] = useState([]);
   const service = ContactService();
   const [isLoading, setIsLoading] = useState(false);
+  const thisComponet=useRef()
   const handleChange = values => {
     if (onChange) onChange(values);
     setSelectedContacts(values);
@@ -59,12 +60,12 @@ const ContactSelector = ({
         try {
         } catch (error) {}
       });
-      const node = ReactDOM.findDOMNode(this);
-      node.setAttribute('type', {name:'ContactSelector'});
+      
+      thisComponet.current.setAttribute('hello', {name:'ContactSelector'});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [extSelectedContacts]);
   return (
-    <Box h="100%" w="100%">
+    <Box h="100%" w="100%" ref={thisComponet}>
       <Heading size="sm" my="2">
         Contacts:
       </Heading>
@@ -85,8 +86,10 @@ const ContactSelector = ({
 };
 ContactSelector.propTypes = {
   extSelectedContacts: PropTypes.array,
+  name:PropTypes.string,
 };
 ContactSelector.defaultProps = {
   extSelectedContacts: [],
+  name:'ContactSelector'
 };
 export default ContactSelector;
