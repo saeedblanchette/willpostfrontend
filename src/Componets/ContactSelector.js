@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import React, { ReactDOM,useEffect, useState } from 'react';
 import { ContactService } from '../services';
 import AsyncSelect from 'react-select/async';
 import PropTypes from 'prop-types';
@@ -59,6 +59,8 @@ const ContactSelector = ({
         try {
         } catch (error) {}
       });
+      const node = ReactDOM.findDOMNode(this);
+      node.setAttribute('type', {name:'ContactSelector'});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [extSelectedContacts]);
   return (
