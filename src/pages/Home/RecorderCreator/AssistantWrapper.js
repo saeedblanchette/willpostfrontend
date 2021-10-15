@@ -6,7 +6,7 @@ import {
   AlertTitle,
   AlertDescription,
   Text,
-  Link
+  Link,
 } from '@chakra-ui/react';
 // import { LinkIcon } from '@chakra-ui/icons'
 import React, { useContext, useEffect, useState } from 'react';
@@ -36,6 +36,7 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
   };
   const onChangeHandeler = value => {
     const typeName = mainComponent.type.name;
+    console.log(' typeName ===> ', typeName);
     switch (typeName) {
       case 'ContactSelector':
         const ids = value.map(contacts => contacts.value);
@@ -68,6 +69,7 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
 
     let com;
     let url = null;
+    console.log(' typeName ===> ', typeName);
     switch (typeName) {
       case 'ContactSelector':
         if (selectedContacts.length === 0) setDisabledNext(true);
@@ -78,7 +80,7 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
         });
         setChildWithProps(com);
         SetShowContactsInfo(true);
-        
+
         break;
       case 'AudioRecorder':
         if (mediaFile === null) {
@@ -159,8 +161,10 @@ const AssistantWrapper = ({ mainComponent, context, children, ...rest }) => {
               Contacts
             </AlertTitle>
             <AlertDescription maxWidth="sm">
-              Select contacts you want them to receive your Will. or 
-              <Link as={LinkRouter} to="/contacts" ><Text color="teal.500">create new Contact</Text>  </Link>
+              Select contacts you want them to receive your Will. or
+              <Link as={LinkRouter} to="/contacts">
+                <Text color="teal.500">create new Contact</Text>{' '}
+              </Link>
             </AlertDescription>
           </Alert>
         )}
