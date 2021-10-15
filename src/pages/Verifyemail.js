@@ -11,6 +11,7 @@ import { useParams,useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { API_HOST_URL } from '../constants';
 const Verifyemail = () => {
+  // eslint-disable-next-line no-unused-vars
   const [isLoading, setIsLoading] = useState(true);
   const [isVerified, setIsVerified] = useState(false);
   const { key } = useParams();
