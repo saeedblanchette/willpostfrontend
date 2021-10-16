@@ -88,6 +88,7 @@ const DisplayPreviewContent = ({ mediaType, file }) => {
   const videRef= useRef()
   const [isLoading,setIsLoading]=useState(true)
   useEffect(()=>{
+    if (videRef.current)
     videRef.current.addEventListener('loadeddata', (event) => {
       setIsLoading(false)
     });
