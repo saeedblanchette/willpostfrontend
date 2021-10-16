@@ -66,14 +66,14 @@ const ContacNamesDisplayer = ({ contactsNames,isStillFetching }) => {
 
   return (
     <Box flex="1" isTruncated wordBreak="break-all" maxWidth="87%">
-       <Skeleton isLoaded={!isStillFetching}>
+       <Skeleton isLoaded={!isStillFetching} >
       <HStack  spacing='0.5'>
         {contactsNames.map((obj, index) => (
           <Tag
             fontSize="xs"
             isTruncated
             colorScheme="none"
-            fontWeight="bold"
+            // fontWeight="bold"
             key={index}
           >
             {obj.label}
@@ -103,7 +103,7 @@ const DisplayPreviewContent = ({ mediaType, file }) => {
         h="85%"
         backgroundColor="black"
       >
-        <Skeleton isLoaded={!isLoading}>
+        <Skeleton isLoaded={!isLoading} height='100%'>
         <video src={file} style={{height:'100%'}}  ref={videRef}></video>
         </Skeleton>
       </Box>
@@ -112,7 +112,7 @@ const DisplayPreviewContent = ({ mediaType, file }) => {
 
   return (
     <Box border="2px" borderColor="black" margin="auto">
-      <Icon as={AiFillAudio} boxSize="90%" margin="auto" />
+      <Icon as={AiFillAudio} boxSize="80%" margin="auto" />
     </Box>
   );
 };

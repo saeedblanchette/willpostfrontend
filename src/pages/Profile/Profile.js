@@ -34,7 +34,7 @@ const Profile = () => {
         <Box >
           <Accordion allowMultiple allowToggle>
             <PerssonalInfo title="Personal Informations" />
-            <Password title="Changing Password" />
+            <Password title="Password" />
             <WillSettings title='Will Settings'/>
           </Accordion>
         </Box>
