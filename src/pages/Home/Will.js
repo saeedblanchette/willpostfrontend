@@ -30,7 +30,7 @@ import {
   Center,
   Skeleton,
 } from '@chakra-ui/react';
-import React, {  useEffect, useState } from 'react';
+import React, {  useEffect, useRef, useState } from 'react';
 import { AiFillAudio } from 'react-icons/ai';
 import AudioRecorder from '../../Componets/AudioRecorder';
 import Card from '../../Componets/Card';
@@ -85,8 +85,16 @@ const ContacNamesDisplayer = ({ contactsNames,isStillFetching }) => {
   );
 };
 const DisplayPreviewContent = ({ mediaType, file }) => {
+  const videRef= useRef()
+  const [isLoading,setIsLoading]=useState(true)
+  useEffect(()=>{
+    videRef.current.addEventListener('loadeddata', (event) => {
+      setIsLoading(false)
+    });
+  },[])
   if (mediaType === 'VIDEO') {
     return (
+      
       <Box
         border="2px"
         borderColor="black"
@@ -94,7 +102,9 @@ const DisplayPreviewContent = ({ mediaType, file }) => {
         h="85%"
         backgroundColor="black"
       >
-        <video src={file} style={{height:'100%'}} ></video>
+        <Skeleton isLoaded={!isLoading}>
+        <video src={file} style={{height:'100%'}}  ref={videRef}></video>
+        </Skeleton>
       </Box>
     );
   }
