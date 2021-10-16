@@ -3,7 +3,6 @@ import Login from '../pages/Login';
 import { authManager } from '../services';
 
 const AuthWarapper = React.forwardRef(({ children }, ref) => {
-  // const [auth, setAuth] = useState(null);
   const auth = authManager();
 
   if (auth === null) return <Login ref={ref} />;

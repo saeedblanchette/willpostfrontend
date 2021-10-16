@@ -1,47 +1,54 @@
 import { Box, Circle, Flex, Heading, Center, Text } from '@chakra-ui/react';
 import Container from './Container';
-
+import {SITE_NAME} from '../constants'
 const HowCardList = [
   {
     number: 1,
-    paragraph: 'Create a  new massage',
+    paragraph: 'Create a  new massage in home page',
   },
   {
     number: 2,
     paragraph:
-      'The willposter it will keep sending  you an email every 30 days ( by default but you can change it)  In oreder to chack still alive',
+      `${SITE_NAME} will send you an email In order to check you are still alive. every 30 days ( by default but you can change it) `,
   },
   {
     number: 3,
     paragraph:
-      'In case we didn’t  get recipone from you after 30 days we iwill notify your sefe gared ( if you select seafe gardes)',
+      "In case you didn't confirm your existence within 7 days. we will notify your safeguards ( if  case you select any)",
   },
 
   {
     number: 4,
     paragraph:
-      'In case your safe gared confirem  that you are not  alive your will will be sent to your selected contact',
+      'In case your  safeguards confirm that you are not alive. your Will will be sent to your selected contacts',
   },
 ];
 const HowCard = ({ number, paragraph }) => {
   return (
     <Flex
-      boxShadow="xl"
       p="4"
-      rounded="md"
       m="4"
       flex="1"
       flexBasis={['100%', '36%']}
       border="1px"
       borderColor="gray.200"
+      boxShadow={'2xl'}
+      rounded="md"
     >
       <Box>
-        <Circle border="8px" borderColor="Black" p="4">
-          <Heading as="h1">{number}</Heading>
+        <Circle p="2" bgGradient="linear(#7FCAD2 0%, #31837F 25%, #868c94 50%)">
+          <Circle p="4" backgroundColor="white">
+            <Heading
+              as="h1"
+              bgGradient="linear(#7FCAD2 0%, #31837F 25%, #868c94 50%)"
+              bgClip="text"
+            >
+              {number}
+            </Heading>
+          </Circle>
         </Circle>
       </Box>
       <Center p={[2, 4]}>
-        {' '}
         <Text fontWeight="bold"> {paragraph} </Text>
       </Center>
     </Flex>

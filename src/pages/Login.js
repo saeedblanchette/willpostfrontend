@@ -23,6 +23,7 @@ import PasswordInput from '../Componets/form/PasswordInput';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { anonymousManager } from '../services';
+import PublicOnlyWrapper from '../Wrappers/PublicOnlyWrapper';
 const Login = React.forwardRef((props, ref) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingEmail, setIsLoadingEmail] = useState(false);
@@ -123,7 +124,7 @@ const Login = React.forwardRef((props, ref) => {
   };
 
   return (
-    <>
+    <PublicOnlyWrapper>
       <Center h="100%" w="full" ref={ref}>
         {sEmailSent ? (
           <>
@@ -260,7 +261,7 @@ const Login = React.forwardRef((props, ref) => {
           </>
         )}
       </Center>
-    </>
+    </PublicOnlyWrapper>
   );
 });
 

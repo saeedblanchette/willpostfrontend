@@ -9,6 +9,7 @@ import Email from './Email';
 const RestoreAccount = () => {
     let { path } = useRouteMatch();
     return (
+        
 
             <Switch>
                 <Route path={`${path}/email`}  component={Email} />

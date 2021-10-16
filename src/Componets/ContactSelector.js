@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Heading,Skeleton } from '@chakra-ui/react';
 import React, {useEffect, useRef, useState } from 'react';
 import { ContactService } from '../services';
 import AsyncSelect from 'react-select/async';
@@ -70,6 +70,7 @@ const ContactSelector = ({
         Contacts:
       </Heading>
       <Box display="flex" flexDirection="column" w="100%">
+      <Skeleton isLoaded={!isLoading}>
         <AsyncSelect
           isMulti
           isLoading={isLoading}
@@ -80,6 +81,7 @@ const ContactSelector = ({
           defaultOptions={contactList}
           styles={customStyles}
         />
+        </Skeleton>
       </Box>
     </Box>
   );

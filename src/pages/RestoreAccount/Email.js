@@ -15,6 +15,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { API_HOST_URL } from '../../constants';
+import PublicOnlyWrapper from '../../Wrappers/PublicOnlyWrapper';
 const Email = () => {
   const {
     register,
@@ -46,6 +47,7 @@ const Email = () => {
       });
   };
   return (
+    <PublicOnlyWrapper>
     <Center>
       <Stack>
         <Center height="full" w="full">
@@ -98,6 +100,7 @@ const Email = () => {
         </form>
       </Stack>
     </Center>
+    </PublicOnlyWrapper>
   );
 };
 

@@ -15,6 +15,7 @@ import {
   import { useForm } from 'react-hook-form';
   import axios from 'axios';
 import { API_HOST_URL } from '../constants';
+import PublicOnlyWrapper from '../Wrappers/PublicOnlyWrapper';
 
 const ResendEmail = () => {
     const {
@@ -49,6 +50,7 @@ const ResendEmail = () => {
           });
       };
       return (
+        <PublicOnlyWrapper>
         <Center>
           <Stack>
             <Center height="full" w="full">
@@ -101,6 +103,7 @@ const ResendEmail = () => {
             </form>
           </Stack>
         </Center>
+        </PublicOnlyWrapper>
       );
     };
 
